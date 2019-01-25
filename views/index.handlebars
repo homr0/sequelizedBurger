@@ -1,0 +1,35 @@
+<header>
+    <div class="row">
+        <div class="col s12">
+            <h1 class="center">Eat Da Burger</h1>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <div class="row">
+        <div class="col s12 m6">
+            <ol class="collection" id="burgers">
+                {{#each burgers}}
+                    {{#unless devoured}}
+                        <li class="collection-item">
+                            {{burger_name}}
+                        </li>
+                    {{/unless}}
+                {{/each}}
+            </ol>
+        </div>
+
+        <div class="col s12 m6">
+            <ol class="collection" id="devoured">
+                {{#each burgers}}
+                    {{#if devoured}}
+                        <li class="collection-item">
+                            {{burger_name}}
+                        </li>
+                    {{/if}}
+                {{/each}}
+            </ol>
+        </div>
+    </div>
+</main>
