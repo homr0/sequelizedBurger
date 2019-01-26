@@ -1,5 +1,5 @@
 // Dependencies
-var orm = require("../config/orm.js");
+const orm = require("../config/orm.js");
 
 // Calls ORM functions specific to burger
 var burger = {
