@@ -7,8 +7,9 @@ USE burgers_db;
 
 -- Table for holding burgers.
 CREATE TABLE burgers (
-    id INT(10) NOT NULL AUTO_INCREMENT,
+    id INT AUTO_INCREMENT NOT NULL,
     burger_name VARCHAR(30) NOT NULL,
     devoured BOOLEAN NOT NULL DEFAULT false,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY(id)
 );

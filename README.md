@@ -25,4 +25,4 @@ The Eat Da Burger process is broken up into two steps:
 
 1. Choose a burger to eat.
 2. Click the **Devour It** button to the right of the burger name.
-3. The burger will show up in the greyed out list of eaten burgers. ![Finished burgers](public/assets/burger-finished.PNG)
+3. The burger will show up in the greyed out list of eaten burgers. ![Finished burgers](public/assets/img/burger-finished.PNG)
