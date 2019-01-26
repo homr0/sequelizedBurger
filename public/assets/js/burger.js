@@ -24,19 +24,21 @@ $(() => {
     $("#burger-order").on("click", function(e) {
         e.preventDefault();
 
-        var newBurger = {
-            burger_name: $("#burger-new").val().trim(),
-            devoured: false
-        };
-
-        // Sends the POST request.
-        $.ajax("/api/burgers/", {
-            type: "POST",
-            data: newBurger
-        }).then(() => {
-            console.log("Ordered a new burger!");
-            // Reload the page.
-            location.reload();
-        })
+        if($("#burger-new").val().trim() !== "") {
+            var newBurger = {
+                burger_name: $("#burger-new").val().trim(),
+                devoured: false
+            };
+    
+            // Sends the POST request.
+            $.ajax("/api/burgers/", {
+                type: "POST",
+                data: newBurger
+            }).then(() => {
+                console.log("Ordered a new burger!");
+                // Reload the page.
+                location.reload();
+            });
+        }
     });
 });
