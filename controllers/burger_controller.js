@@ -1,12 +1,12 @@
 // Dependencies
-var express = require("express");
-var router = express.Router();
-var burger = require("../models/burger.js");
+const express = require("express");
+const router = express.Router();
+const burger = require("../models/burger.js");
 
 // Routes
 router.get("/", (req, res) => {
     burger.selectAll((data) => {
-        var hbsObject = {
+        const hbsObject = {
             burgers: data
         };
 
@@ -19,7 +19,7 @@ router.post("/api/burgers", (req, res) => {
         "burger_name", "devoured"
     ], [req.body.burger_name, req.body.devoured], (data) => {
         // Send back the id of the newly created burger.
-        res.json({ id: result.insertId });
+        res.json({ id: data.insertId });
     });
 });
 
@@ -29,7 +29,7 @@ router.put("/api/burgers/:id", (req, res) => {
     burger.updateOne({
         devoured: req.body.devoured
     }, condition, (data) => {
-        if(result.changedRows == 0) {
+        if(data.changedRows == 0) {
             // If no rows were changed, then the ID must not exist.
             return res.status(404).end();
         } else {

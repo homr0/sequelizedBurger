@@ -1,5 +1,5 @@
 // Imports MySQL connection.
-var connection = require("./connection.js");
+const connection = require("./connection.js");
 
 // Helper functions
 // Creates an array of question marks and prints it as a string.
@@ -19,7 +19,7 @@ var objToSql = (obj) => {
         var value = obj[key];
 
         // Checks to make sure property isn't hidden
-        if (Object.hasOwnProperty.call(ob, key)) {
+        if (Object.hasOwnProperty.call(obj, key)) {
             if (typeof value === "string" && value.indexOf(" ") >= 0) value = "'" + value + "'";
 
             arr.push(key + " = " + value);
