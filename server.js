@@ -1,4 +1,4 @@
-// Dependecies
+// Dependencies
 var express = require("express");
 
 // Server configuration
