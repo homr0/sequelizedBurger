@@ -1,4 +1,4 @@
-# Eat Da Burger
+# Eat Da Burger (the Sequel)
 
 Welcome to [Eat Da Burger](https://fast-inlet-22337.herokuapp.com/), an app for all-you-can-eat burgers.
 

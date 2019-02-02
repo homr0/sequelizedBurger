@@ -1,10 +1,13 @@
-// Dependencies
-var express = require("express");
+// Dependecies
+const express = require("express");
 
 // Server configuration
 var PORT = process.env.PORT || 3000;
 
 var app = express();
+
+// Requires the models for sync
+var db = require("./models");
 
 // Serves static files from the public directory.
 app.use(express.static("public"));
@@ -24,11 +27,15 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/burger_controller.js");
+var routes = require("../burger/controllers/burger_controller.js");
 
 app.use(routes);
 
 // Start our server so that it can begin listening to client requests.
-app.listen(PORT, () => {
-    console.log("Server listening on: http://localhost:" + PORT);
+db.sequelize.sync({
+    force: true
+}).then(function() {
+    app.listen(PORT, function() {
+        console.log("App listening on PORT " + PORT);
+    });
 });
