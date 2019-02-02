@@ -27,9 +27,11 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/burger_controller.js");
+var burgerRoutes = require("./controllers/burger_controller.js");
+var eaterRoutes = require("./controllers/eater_controller.js");
 
-app.use(routes);
+app.use(burgerRoutes);
+app.use(eaterRoutes);
 
 // Start our server so that it can begin listening to client requests.
 db.sequelize.sync({

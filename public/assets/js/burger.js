@@ -41,4 +41,25 @@ $(() => {
             });
         }
     });
+
+    // Adds a new eater to the roster.
+    $("#eater-admit").on("click", function(e) {
+        e.preventDefault();
+
+        if($("#eater-new").val().trim() !== "") {
+            var newEater = {
+                eater_name: $("#eater-new").val().trim()
+            };
+
+            // Sends the POST request.
+            $.ajax("/api/eaters", {
+                type: "POST",
+                data: newEater
+            }).then(() => {
+                console.log("Added a new eater!");
+                // Reload the page.
+                location.reload();
+            });
+        }
+    });
 });

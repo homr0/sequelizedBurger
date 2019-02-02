@@ -7,8 +7,11 @@ module.exports = (sequelize, DataTypes) => {
       unique: true
     }
   }, {});
-  Eater.associate = function(models) {
-    // associations can be defined here
+
+  Eater.associate = (models) => {
+    Eater.hasMany(models.Burger, {
+      onDelete: "CASCADE"
+    });
   };
   return Eater;
 };
