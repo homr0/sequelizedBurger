@@ -9,12 +9,45 @@ h1 {
     font-family: "Staatliches", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-header img {
+header h1 a {
+    color: inherit;
+    padding: 1rem;
+}
+
+header h1 a:hover {
+    background-color: rgba(191, 63, 63, 0.5);
+}
+
+header #mascot {
     width: 100%;
     max-width: 250px;
-    height: auto;
+    min-height: 250px;
+    position: relative;
     box-shadow: 0 0 5px 10px rgba(191, 191, 191, 0.7);
-    margin: 1rem;
+    margin: 3rem auto 2rem;
+    background-image: url('../img/burger.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+header #mascot:hover {
+    opacity: 0.9;
+    box-shadow: 0 0 5px 10px rgba(191, 191, 191, 0.9);
+    cursor: pointer;
+}
+
+header #mascot p {
+    position: absolute;
+    width: 100%;
+    top: calc(50% - 2rem);
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 1.5rem;
+}
+
+header #mascot:hover p {
+    background-color: rgba(0, 0, 0, 0.75);
 }
 
 #burgers li {
