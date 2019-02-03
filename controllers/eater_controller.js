@@ -8,13 +8,15 @@ router.get("/eaters", (req, res) => {
     db.Eater.findAll({
         include: [{
             model: db.Burger
-        }]
+        }],
+
+        order: [
+            ["eater_name", "ASC"]
+        ]
     }).then((data) => {
         const hbsObject = {
             eaters: data
         };
-
-        console.log(hbsObject.eaters)
 
         res.render("eaters", hbsObject);
     });
