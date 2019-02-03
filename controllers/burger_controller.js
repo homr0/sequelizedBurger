@@ -5,10 +5,16 @@ const db = require("../models");
 
 // Routes
 router.get("/", (req, res) => {
-    db.Burger.findAll({}).then((data)=> {
+    db.Burger.findAll({
+        include: [{
+            model: db.Eater
+        }]
+    }).then((data)=> {
         const hbsObject = {
             burgers: data
         };
+
+        console.log(hbsObject.burgers);
 
         res.render("index", hbsObject);
     });
@@ -21,12 +27,23 @@ router.post("/api/burgers", (req, res) => {
 });
 
 router.put("/api/burgers/:id", (req, res) => {
-    db.Burger.update(req.body, {
+    db.Eater.findOrCreate({
         where: {
-            id: req.params.id
+            eater_name: req.body.eater_name
         }
-    }).then((data) => {
-        res.json(data);
+    }).then((eater) => {
+        db.Burger.update({
+            devoured: req.body.devoured,
+            EaterId: eater[0].dataValues.id
+        }, {
+            where: {
+                id: req.params.id
+            }
+        }).then((data) => {
+            res.json(data);
+        }).catch((err) => {
+            res.json(err);
+        });
     }).catch((err) => {
         res.json(err);
     });

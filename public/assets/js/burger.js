@@ -5,19 +5,22 @@ $(() => {
 
         var id = $(this).data("id");
 
-        var devoured = {
-            devoured: true
-        };
-
-        // Sends the PUT request.
-        $.ajax("/api/burgers/" + id, {
-            type: "PUT",
-            data: devoured
-        }).then(() => {
-            console.log("Ate the burger!");
-            // Reload the page.
-            location.reload();
-        });
+        if($("#eater" + id).val().trim().length > 0) {
+            var devoured = {
+                devoured: true,
+                eater_name: $("#eater" + id).val().trim()
+            };
+    
+            // Sends the PUT request.
+            $.ajax("/api/burgers/" + id, {
+                type: "PUT",
+                data: devoured
+            }).then(() => {
+                console.log("Ate the burger!");
+                // Reload the page.
+                location.reload();
+            });
+        }
     });
 
     // Adds a new burger to eat.

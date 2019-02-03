@@ -5,10 +5,16 @@ const db = require("../models");
 
 // Routes
 router.get("/eaters", (req, res) => {
-    db.Eater.findAll({}).then((data) => {
+    db.Eater.findAll({
+        include: [{
+            model: db.Burger
+        }]
+    }).then((data) => {
         const hbsObject = {
             eaters: data
         };
+
+        console.log(hbsObject.eaters)
 
         res.render("eaters", hbsObject);
     });
