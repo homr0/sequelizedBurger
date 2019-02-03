@@ -24,5 +24,14 @@ The Eat Da Burger process is broken up into two steps:
 ![Eat a burger](public/assets/img/burger-devour.PNG)
 
 1. Choose a burger to eat.
-2. Click the **Devour It** button to the right of the burger name.
-3. The burger will show up in the greyed out list of eaten burgers. ![Finished burgers](public/assets/img/burger-finished.PNG)
+2. Type in the name of the person eating the burger.
+3. Click the **Devour It** button to the right of the burger name.
+4. The burger will show up in the greyed out list of eaten burgers. ![Finished burgers](public/assets/img/burger-finished.PNG)
+
+### Add an Eater
+
+![Add an eater](public/assets/img/burger-eater.PNG)
+
+1. Go to [the Eaters page](https://fast-inlet-22337.herokuapp.com/eaters).
+2. Enter the name of the Eater.
+3. Click **Submit** to add the person to the list of Eaters.
