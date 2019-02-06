@@ -35,7 +35,7 @@ app.use(eaterRoutes);
 
 // Start our server so that it can begin listening to client requests.
 db.sequelize.sync({
-    force: true
+    force: false
 }).then(() => {
     app.listen(PORT, function() {
         console.log("App listening on PORT " + PORT);
