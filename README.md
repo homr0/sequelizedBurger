@@ -1,6 +1,6 @@
 # Eat Da Burger (the Sequel)
 
-Welcome to [Eat Da Burger](https://fast-inlet-22337.herokuapp.com/), an app for all-you-can-eat burgers.
+Welcome to [Eat Da Burger](https://da-burger-eaters.herokuapp.com/), an app for all-you-can-eat burgers.
 
 This app keeps track of what burgers have been ordered and what burgers have been eaten. Additionally users can order more burgers to eat.
 
@@ -32,6 +32,6 @@ The Eat Da Burger process is broken up into two steps:
 
 ![Add an eater](public/assets/img/burger-eater.PNG)
 
-1. Go to [the Eaters page](https://fast-inlet-22337.herokuapp.com/eaters).
+1. Go to [the Eaters page](https://da-burger-eaters.herokuapp.com/eaters).
 2. Enter the name of the Eater.
 3. Click **Submit** to add the person to the list of Eaters.
